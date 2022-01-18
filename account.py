@@ -4,18 +4,18 @@ class Account:
 
     def __init__(self, number, holder, balance, limit):
         print("Constructing object...")
-        self.number = number
-        self.holder = holder
-        self.balance = balance
-        self.limit = limit
+        self.__number = number
+        self.__holder = holder
+        self.__balance = balance
+        self.__limit = limit
 
     def account_balance(self):
-        print("{}, your account balance is {}".format(self.holder, self.balance))
+        print("{}, your account balance is {}".format(self.__holder, self.__balance))
 
     def deposit(self, value):
-        self.balance += value
-        print("{}, your new balance is {}".format(self.holder, self.balance))
+        self.__balance += value
+        print("{}, your new balance is {}".format(self.__holder, self.__balance))
 
     def withdraw(self, value):
-        self.balance -= value
-        print("{}, your new balance is {}".format(self.holder, self.balance))
+        self.__balance -= value
+        print("{}, your new balance is {}".format(self.__holder, self.__balance))
