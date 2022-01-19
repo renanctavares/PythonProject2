@@ -19,3 +19,7 @@ class Account:
     def withdraw(self, value):
         self.__balance -= value
         print("{}, your new balance is {}".format(self.__holder, self.__balance))
+
+    def transfer(self, value, destination):
+        self.withdraw(value)
+        destination.deposit(value)
