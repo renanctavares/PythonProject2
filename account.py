@@ -30,8 +30,12 @@ class Account:
     def get_holder(self):
         return self.__holder
 
-    def get_limit(self):
+    @property
+    def limit(self):
+        print("Property")
         return self.__limit
 
-    def set_limit(self, limit):
+    @limit.setter
+    def limit(self, limit):
+        print("Setter")
         self.__limit = limit
