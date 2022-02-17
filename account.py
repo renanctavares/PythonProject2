@@ -16,9 +16,16 @@ class Account:
         self.__balance += value
         print("{}, your new balance is {}".format(self.__holder, self.__balance))
 
+    def __check_limit(self, checking_value):
+        available_value = self.__balance + self.__limit
+        return checking_value <= available_value
+
     def withdraw(self, value):
-        self.__balance -= value
-        print("{}, your new balance is {}".format(self.__holder, self.__balance))
+        if(self.__check_limit(value)):
+            self.__balance -= value
+            print("{}, your new balance is {}".format(self.__holder, self.__balance))
+        else:
+            print("The value {} is over your limit".format(value))
 
     def transfer(self, value, destination):
         self.withdraw(value)
